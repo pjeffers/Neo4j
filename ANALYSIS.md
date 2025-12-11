@@ -42,7 +42,6 @@ _For production readiness_
 - Define recovery procedures.
 - 
 
-
 ### Do you have any feedback on the exercise in general?
 
-It was difficult!
+It was challenging!

@@ -34,9 +34,7 @@ public class SkipListImpl implements SkipList {
             lastNodeFound = head;
             nodeCount++;
         }else{
-            //valueNotFound = !contains(value);
-            //if (valueNotFound) {
-                nodeFound = skipSearch(value);
+                 nodeFound = skipSearch(value);
                 //nodeFound = lastNodeFound;
                 if (valueNotFound) {
                     newNode = insertNode(nodeFound, value);
@@ -44,7 +42,6 @@ public class SkipListImpl implements SkipList {
                         start = newNode;
                     }
                 }
-           // }
         }
         return valueNotFound;
     }
@@ -53,7 +50,6 @@ public class SkipListImpl implements SkipList {
         Random rand = new Random();
         int num=rand.nextInt(100);
         return num < probabilityPercentage;
-        //return rand.nextBoolean();
     }
 
     private Node insertNode(Node nodeFound, long value) {
@@ -68,12 +64,8 @@ public class SkipListImpl implements SkipList {
             newTargetNode.setPrevious(nodeFound);
             newTargetNode.setNext(nodeFound.getNext());
 
-//            nodeFound.setNext(newTargetNode);
-
-
             if (nodeFound==head) {
-
-                newTargetNode.setNext(head.getBelow());
+              newTargetNode.setNext(head.getBelow());
                 //newTargetNode.setPrevious(head);
                 head.setBelow(newTargetNode);
                 start = newTargetNode;
